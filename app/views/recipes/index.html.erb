@@ -1,5 +1,3 @@
-<h1>Social Recipes</h1>
-
 <dl>
   <% @recipes.each do |recipe| %>
     <dt><%= link_to recipe.name, recipe_path(recipe) %></dt>
@@ -14,3 +12,6 @@
 <br>
 
 <%= link_to 'Cadastrar receitas', new_recipe_path %>
+<br>
+<br>
+<%= link_to 'Cadastrar usuários', new_user_path %>

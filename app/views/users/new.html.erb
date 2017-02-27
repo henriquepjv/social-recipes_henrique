@@ -1,0 +1,22 @@
+<%= notice %>
+
+<%= form_for @user do |f| %>
+  <dl>
+    <dt><%= f.label :name, 'Nome do usuário' %></dt>
+    <dd><%= f.text_field :name %><dd>
+
+    <dt><%= f.label :email, 'Email' %></dt>
+    <dd><%= f.text_field :email %></dd>
+
+    <dt><%= f.label :encrypted_password, 'Senha' %></dt>
+    <dd><%= f.password_field :encrypted_password %></dd>
+
+    <dt><%= f.label :administrator, 'Administrador' %></dt>
+    <dd><%= f.check_box :administrator %></dd>
+
+
+    <br>
+
+    <dt><%= f.submit 'Cadastrar usuário' %></dt>
+
+<% end %>
