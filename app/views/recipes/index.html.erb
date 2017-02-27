@@ -1,0 +1,16 @@
+<h1>Social Recipes</h1>
+
+<dl>
+  <% @recipes.each do |recipe| %>
+    <dt><%= link_to recipe.name, recipe_path(recipe) %></dt>
+    <dd><%= recipe.food_type %></dd>
+    <dd><%= recipe.cookery %></dd>
+    <dd><%= recipe.difficult %></dd>
+
+
+<% end %>
+
+<br>
+<br>
+
+<%= link_to 'Cadastrar receitas', new_recipe_path %>

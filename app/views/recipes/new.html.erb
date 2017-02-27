@@ -1,30 +1,33 @@
 <%= notice %>
 
 <%= form_for @recipe do |f| %>
-  <%= f.label :name, 'Nome da receita' %>
-  <%= f.text_field :name %>
+  <dl>
+    <dt><%= f.label :name, 'Nome da receita' %></dt>
+    <dd><%= f.text_field :name %><dd>
 
-  <%= f.label :cookery, 'Cozinha' %>
-  <%= f.text_field :cookery %>
+    <dt><%= f.label :cookery, 'Cozinha' %></dt>
+    <dd><%= f.text_field :cookery %></dd>
 
-  <%= f.label :food_type, 'Tipo de comida' %>
-  <%= f.text_field :food_type %>
+    <dt><%= f.label :food_type, 'Tipo de comida' %></dt>
+    <dd><%= f.text_field :food_type %></dd>
 
-  <%= f.label :people_portion, 'Quantas pessoas serve' %>
-  <%= f.text_field :people_portion %>
+    <dt><%= f.label :people_portion, 'Quantas pessoas serve' %></dt>
+    <dd><%= f.text_field :people_portion %></dd>
 
-  <%= f.label :preparation_time, 'Tempo de preparo' %>
-  <%= f.text_field :preparation_time %>
+    <dt><%= f.label :preparation_time, 'Tempo de preparo' %></dt>
+    <dd><%= f.text_field :preparation_time %></dd>
 
-  <%= f.label :difficult, 'Nível de dificuldade' %>
-  <%= f.text_field :difficult %>
+    <dt><%= f.label :difficult, 'Nível de dificuldade' %></dt>
+    <dd><%= f.text_field :difficult %></dd>
 
-  <%= f.label :ingredients, 'Ingredientes' %>
-  <%= f.text_field :ingredients %>
+    <dt><%= f.label :ingredients, 'Ingredientes' %></dt>
+    <dd><%= f.text_field :ingredients %></dd>
 
-  <%= f.label :steps, 'Passo a passo' %>
-  <%= f.text_field :steps %>
+    <dt><%= f.label :steps, 'Passo a passo' %></dt>
+    <dd><%= f.text_field :steps %></dd>
 
-  <%= f.submit 'Cadastrar receita' %>
+    <br>
+
+    <dt><%= f.submit 'Cadastrar receita' %></dt>
 
 <% end %>
