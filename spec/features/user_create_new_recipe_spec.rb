@@ -2,7 +2,9 @@ require 'rails_helper'
 
 feature 'Visitor create new recipe' do
   scenario 'successfully' do
-    recipe = Recipe.new(name: 'bolo', cookery: 'italiana',food_type: 'doce',
+    cookery = Cookery.create(name: 'Italiana')
+
+    recipe = Recipe.new(name: 'bolo', cookery: cookery, food_type: 'doce',
                             people_portion: '6', preparation_time: '60 min',
                             difficult: 'médio', ingredients: 'fermento, doce de leite',
                             steps: 'primeiro quebre os ovos')
@@ -10,7 +12,7 @@ feature 'Visitor create new recipe' do
     visit new_recipe_path
 
     fill_in 'Nome da receita', with: recipe.name
-    fill_in 'Cozinha', with: recipe.cookery
+    select cookery.name, from: 'Cozinha'
     fill_in 'Tipo de comida', with: recipe.food_type
     fill_in 'Quantas pessoas serve', with: recipe.people_portion
     fill_in 'Tempo de preparo', with: recipe.preparation_time
@@ -21,7 +23,7 @@ feature 'Visitor create new recipe' do
     click_on 'Cadastrar receita'
 
     expect(page).to have_content recipe.name
-    expect(page).to have_content recipe.cookery
+    expect(page).to have_content recipe.cookery.name
     expect(page).to have_content recipe.food_type
     expect(page).to have_content recipe.people_portion
     expect(page).to have_content recipe.preparation_time

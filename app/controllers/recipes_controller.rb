@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @cookeries = Cookery.all
   end
 
   def create
@@ -14,6 +15,7 @@ class RecipesController < ApplicationController
       redirect_to @recipe
     else
       flash[:notice] = 'Dado inválido'
+      @cookeries = Cookery.all
       render :new
     end
   end
@@ -26,7 +28,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-  params.require(:recipe).permit(:name, :cookery, :food_type, :people_portion,
+  params.require(:recipe).permit(:name, :cookery_id, :food_type, :people_portion,
                                  :preparation_time, :difficult, :ingredients,
                                  :steps)
   end

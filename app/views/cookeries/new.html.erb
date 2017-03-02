@@ -3,7 +3,7 @@
 <%= form_for @cookery do |f| %>
 
   <dl>
-    <dt><<%= f.label :name, 'Digite o nome da cozinha' %></dt>
+    <dt><%= f.label :name, 'Digite o nome da cozinha' %></dt>
     <dd><%= f.text_field :name %></dd>
 
     <dt><%= f.submit 'Cadastrar cozinha' %></dt>

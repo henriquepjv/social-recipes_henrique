@@ -2,8 +2,9 @@
   <% @recipes.each do |recipe| %>
     <dt><%= link_to recipe.name, recipe_path(recipe) %></dt>
     <dd><%= recipe.food_type %></dd>
-    <dd><%= recipe.cookery %></dd>
+    <dd><%= recipe.cookery.name if recipe.cookery %></dd>
     <dd><%= recipe.difficult %></dd>
+</dl>
 
 
 <% end %>
@@ -15,3 +16,6 @@
 <br>
 <br>
 <%= link_to 'Cadastrar usuários', new_user_path %>
+<br>
+<br>
+<%= link_to 'Cadastrar cozinha', new_cookery_path %>
