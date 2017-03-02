@@ -1,0 +1,12 @@
+<%= notice %>
+
+<%= form_for @food do |f| %>
+
+  <dl>
+    <dt><%= f.label :name, 'Digite o nome do tipo de comida' %></dt>
+    <dd><%= f.text_field :name %></dd>
+
+    <dt><%= f.submit 'Cadastrar tipo de comida' %></dt>
+  </dl>
+
+<% end %>

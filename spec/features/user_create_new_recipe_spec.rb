@@ -4,7 +4,9 @@ feature 'Visitor create new recipe' do
   scenario 'successfully' do
     cookery = Cookery.create(name: 'Italiana')
 
-    recipe = Recipe.new(name: 'bolo', cookery: cookery, food_type: 'doce',
+    food = Food.create(name: 'entrada')
+
+    recipe = Recipe.new(name: 'bolo', cookery: cookery, food: food,
                             people_portion: '6', preparation_time: '60 min',
                             difficult: 'médio', ingredients: 'fermento, doce de leite',
                             steps: 'primeiro quebre os ovos')
@@ -13,7 +15,7 @@ feature 'Visitor create new recipe' do
 
     fill_in 'Nome da receita', with: recipe.name
     select cookery.name, from: 'Cozinha'
-    fill_in 'Tipo de comida', with: recipe.food_type
+    select food.name, from: 'Tipo de comida'
     fill_in 'Quantas pessoas serve', with: recipe.people_portion
     fill_in 'Tempo de preparo', with: recipe.preparation_time
     fill_in 'Nível de dificuldade', with: recipe.difficult
@@ -24,7 +26,7 @@ feature 'Visitor create new recipe' do
 
     expect(page).to have_content recipe.name
     expect(page).to have_content recipe.cookery.name
-    expect(page).to have_content recipe.food_type
+    expect(page).to have_content recipe.food.name
     expect(page).to have_content recipe.people_portion
     expect(page).to have_content recipe.preparation_time
     expect(page).to have_content recipe.difficult
