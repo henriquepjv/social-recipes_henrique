@@ -1,9 +1,12 @@
 <%= notice %>
 
-<%= form_for @recipe do |f| %>
+<%= form_for @recipe, html: { multipart: true } do |f| %>
   <dl>
     <dt><%= f.label :name, 'Nome da receita' %></dt>
     <dd><%= f.text_field :name %><dd>
+
+    <dt><%= f.label :picture, 'Insira uma imagem' %></dt>
+    <dd><%= f.file_field :picture %><dd>
 
     <dt><%= f.label :cookery_id, 'Cozinha' %></dt>
     <dd><%= f.collection_select(:cookery_id, @cookeries, :id, :name) %></dd>
