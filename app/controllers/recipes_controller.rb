@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.most_recent.limit(20)
+    @cookeries = Cookery.all
   end
 
   def new

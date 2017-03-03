@@ -1,3 +1,13 @@
 <dl>
-  <dt><%= @cookery.name %></dt>
+  <dt>Cozinha: <%= @cookery.name %></dt>
+
+<% @cookeries.each do |cookery| %>
+
+  <ul>
+    <% cookery.recipes.each do |recipe| %>
+    <li><%= link_to recipe.name, recipe_path(recipe) %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 </dl>

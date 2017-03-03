@@ -16,6 +16,7 @@ class CookeriesController < ApplicationController
 
   def show
     @cookery = Cookery.find(params[:id])
+    @cookeries = Cookery.includes(:recipes).where(recipes: { cookery_id: @cookery })
   end
 
   private

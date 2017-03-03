@@ -47,8 +47,10 @@
 <div class="row cozinha">
    <div class="col-sm-3">
      <h3 id="cozinhas">Cozinha</h3>
-      <p>Mineira</p>
-      <p>Italiana</p>
-      <p>Mexicana</p>
+       <% @cookeries.each do |cookery| %>
+        <dt>
+          <dd><%= link_to cookery.name, cookery_path(cookery) %></dd>
+        </dt>
+      <% end %>
   </div>
 </div
