@@ -10,7 +10,7 @@
   <div class="col-sm-4">
     <h3 id="ultimas-receitas">Últimas Receitas</h3>
       <div class="row ultimas-receitas">
-          <div class="col-sm-3">
+          <div class="col-sm-4">
             <% @recipes.each do |recipe| %>
               <dt>
                 <dd><%= link_to recipe.name, recipe_path(recipe) %></dd>
