@@ -12,7 +12,7 @@ feature 'Administrator creates new cookery' do
 
     fill_in 'Digite o nome da cozinha', with: cookery.name
 
-    click_on 'Cadastrar cozinha'
+    click_on 'Cadastrar a cozinha'
 
     expect(page).to have_content cookery.name
 
@@ -22,7 +22,7 @@ feature 'Administrator creates new cookery' do
 
     visit new_cookery_path
 
-    click_on 'Cadastrar cozinha'
+    click_on 'Cadastrar a cozinha'
 
     expect(page).to have_content 'Dado inválido'
 

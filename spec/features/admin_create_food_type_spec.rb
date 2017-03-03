@@ -12,7 +12,7 @@ feature 'Administrator creates new type of food' do
 
     fill_in 'Digite o nome do tipo de comida', with: food.name
 
-    click_on 'Cadastrar tipo de comida'
+    click_on 'Cadastrar o tipo de comida'
 
     expect(page).to have_content food.name
 
@@ -22,7 +22,7 @@ feature 'Administrator creates new type of food' do
 
     visit new_food_path
 
-    click_on 'Cadastrar tipo de comida'
+    click_on 'Cadastrar o tipo de comida'
 
     expect(page).to have_content 'Dado inválido'
 

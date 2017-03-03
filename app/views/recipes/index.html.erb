@@ -1,24 +1,54 @@
-<dl>
-  <% @recipes.each do |recipe| %>
-    <dt><%= link_to recipe.name, recipe_path(recipe) %></dt>
-    <dd><%= recipe.food.name %></dd>
-    <dd><%= recipe.cookery.name %></dd>
-    <dd><%= recipe.difficult %></dd>
-</dl>
+
+<div class="row tipo-ultimas-receitas-favoritas">
+   <div class="col-sm-3">
+     <h3 id="tipo-de-comida">Tipo</h3>
+      <p>Entrada</p>
+      <p>Principal</p>
+      <p>Sobremesa</p>
+  </div>
+
+  <div class="col-sm-4">
+    <h3 id="ultimas-receitas">Últimas Receitas</h3>
+      <div class="row ultimas-receitas">
+          <div class="col-sm-3">
+            <% @recipes.each do |recipe| %>
+              <dt>
+                <dd><%= link_to recipe.name, recipe_path(recipe) %></dd>
+                <dd><%= recipe.food.name %></dd>
+                <dd><%= recipe.cookery.name %></dd>
+                <dd><%= recipe.difficult %></dd>
+              </dt>
+            <% end %>
+         </div>
+
+         <div class="col-sm-4">
+           <p></p>
+
+         </div>
+      </div>
+
+  </div>
+
+   <div class="col-sm-4">
+      <h3 id="favoritas-dos-usuarios">Favoritas dos Usuários</h3>
+      <div class="row ultimas-receitas">
+          <div class="col-sm-3">
+
+         </div>
+
+         <div class="col-sm-4">
 
 
-<% end %>
+         </div>
+      </div>
+  </div>
+</div>
 
-<br>
-<br>
-
-<%= link_to 'Cadastrar receitas', new_recipe_path %>
-<br>
-<br>
-<%= link_to 'Cadastrar usuários', new_user_path %>
-<br>
-<br>
-<%= link_to 'Cadastrar cozinha', new_cookery_path %>
-<br>
-<br>
-<%= link_to 'Cadastrar tipo de comida', new_food_path %>
+<div class="row cozinha">
+   <div class="col-sm-3">
+     <h3 id="cozinhas">Cozinha</h3>
+      <p>Mineira</p>
+      <p>Italiana</p>
+      <p>Mexicana</p>
+  </div>
+</div
