@@ -3,6 +3,10 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.most_recent.limit(20)
     @cookeries = Cookery.all
+
+    if params[:keywords].present?
+     @allrecipes = Recipe.search params[:keywords], fields: [:name, :ingredients]
+   end
   end
 
   def new

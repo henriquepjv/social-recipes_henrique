@@ -15,3 +15,15 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}

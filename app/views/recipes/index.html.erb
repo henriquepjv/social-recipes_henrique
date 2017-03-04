@@ -1,56 +1,78 @@
-
-<div class="row tipo-ultimas-receitas-favoritas">
-   <div class="col-sm-3">
-     <h3 id="tipo-de-comida">Tipo</h3>
-      <p>Entrada</p>
-      <p>Principal</p>
-      <p>Sobremesa</p>
-  </div>
-
-  <div class="col-sm-4">
-    <h3 id="ultimas-receitas">Últimas Receitas</h3>
-      <div class="row ultimas-receitas">
-          <div class="col-sm-4">
-            <% @recipes.each do |recipe| %>
-              <dt>
-                <dd><%= link_to recipe.name, recipe_path(recipe) %></dd>
-                <dd><%= recipe.food.name %></dd>
-                <dd><%= recipe.cookery.name %></dd>
-                <dd><%= recipe.difficult %></dd>
-              </dt>
-            <% end %>
-         </div>
-
-         <div class="col-sm-4">
-           <p></p>
-
-         </div>
-      </div>
-
-  </div>
-
-   <div class="col-sm-4">
-      <h3 id="favoritas-dos-usuarios">Favoritas dos Usuários</h3>
-      <div class="row ultimas-receitas">
-          <div class="col-sm-3">
-
-         </div>
-
-         <div class="col-sm-4">
-
-
-         </div>
-      </div>
-  </div>
+<div class="container">
+  <form role="form" action="/">
+    <h2 class="">Encontrando Receitas</h2>
+    <input type="text" class="form-control" placeholder="Ex: Brigadeiro" name="keywords">
+    <br>
+    <button class="btn btn-primary btn-block" type="submit">Procurar</button>
+    <br>
+  </form>
+  <section class="recipes">
+    <% if @allrecipes.present? %>
+      <% @allrecipes.each do |recipe| %>
+      <div class="col-md-12">
+        <h1><%= recipe.name %></h1>
+        <p><%= recipe.ingredients %></p>
+          </div>
+      <% end %>
+    <% end %>
+  </selection>
 </div>
 
-<div class="row cozinha">
-   <div class="col-sm-3">
-     <h3 id="cozinhas">Cozinha</h3>
-       <% @cookeries.each do |cookery| %>
-        <dt>
-          <dd><%= link_to cookery.name, cookery_path(cookery) %></dd>
-        </dt>
-      <% end %>
+
+<div class="container">
+  <div class="row tipo-ultimas-receitas-favoritas">
+     <div class="col-sm-3">
+       <h3 id="tipo-de-comida">Tipo</h3>
+        <p>Entrada</p>
+        <p>Principal</p>
+        <p>Sobremesa</p>
+    </div>
+
+    <div class="col-sm-4">
+      <h3 id="ultimas-receitas">Últimas Receitas</h3>
+        <div class="row ultimas-receitas">
+            <div class="col-sm-4">
+              <% @recipes.each do |recipe| %>
+                <dt>
+                  <dd><%= link_to recipe.name, recipe_path(recipe) %></dd>
+                  <dd><%= recipe.food.name %></dd>
+                  <dd><%= recipe.cookery.name %></dd>
+                  <dd><%= recipe.difficult %></dd>
+                </dt>
+              <% end %>
+           </div>
+
+           <div class="col-sm-4">
+             <p></p>
+
+           </div>
+        </div>
+
+    </div>
+
+     <div class="col-sm-4">
+        <h3 id="favoritas-dos-usuarios">Favoritas dos Usuários</h3>
+        <div class="row ultimas-receitas">
+            <div class="col-sm-3">
+
+           </div>
+
+           <div class="col-sm-4">
+
+
+           </div>
+        </div>
+    </div>
   </div>
-</div
+
+  <div class="row cozinha">
+     <div class="col-sm-3">
+       <h3 id="cozinhas">Cozinha</h3>
+         <% @cookeries.each do |cookery| %>
+          <dt>
+            <dd><%= link_to cookery.name, cookery_path(cookery) %></dd>
+          </dt>
+        <% end %>
+    </div>
+  </div
+</div>
