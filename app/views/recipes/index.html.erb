@@ -1,25 +1,4 @@
 <div class="container">
-  <form role="form" action="/">
-    <h2 class="">Encontrando Receitas</h2>
-    <input type="text" class="form-control" placeholder="Ex: Brigadeiro" name="keywords">
-    <br>
-    <button class="btn btn-primary btn-block" type="submit">Procurar</button>
-    <br>
-  </form>
-  <section class="recipes">
-    <% if @allrecipes.present? %>
-      <% @allrecipes.each do |recipe| %>
-      <div class="col-md-12">
-        <h1><%= recipe.name %></h1>
-        <p><%= recipe.ingredients %></p>
-          </div>
-      <% end %>
-    <% end %>
-  </selection>
-</div>
-
-
-<div class="container">
   <div class="row tipo-ultimas-receitas-favoritas">
      <div class="col-sm-3">
        <h3 id="tipo-de-comida">Tipo</h3>

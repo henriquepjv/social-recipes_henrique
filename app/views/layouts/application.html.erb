@@ -11,34 +11,40 @@
   <body>
     <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
+
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
       <a class="navbar-brand" href="http://localhost:3000/"><strong>Social</strong> Recipes</a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Início', root_path %></li>
-        <li><%= link_to 'Cadastrar receitas', new_recipe_path %></li>
-        <li><%= link_to 'Cadastrar usuários', new_user_path %></li>
-        <li><%= link_to 'Cadastrar cozinha', new_cookery_path %></li>
-        <li><%= link_to 'Cadastrar tipo de comida', new_food_path %></li>
-        <li><input type="text" placeholder="Buscar"></li>
-        <li><button type="submit" class="btn btn-default">Submit</button></li>
+      <form role="form" action="/">
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to 'Início', root_path %></li>
+          <li><%= link_to 'Cadastrar receitas', new_recipe_path %></li>
+          <li><%= link_to 'Cadastrar usuários', new_user_path %></li>
+          <li><%= link_to 'Cadastrar cozinha', new_cookery_path %></li>
+          <li><%= link_to 'Cadastrar tipo de comida', new_food_path %></li>
+          <li><input type="text" placeholder="Buscar" name="keywords"></li>
+          <li><button type="submit" class="btn btn-primary btn-block">Submit</button></li>
+      </form>
 
           </ul>
         </li>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+  <section class="recipes">
+    <% if @allrecipes.present? %>
+      <% @allrecipes.each do |recipe| %>
+      <div class="col-md-12">
+        <h1><%= recipe.name %></h1>
+        <p><%= recipe.ingredients %></p>
+          </div>
+      <% end %>
+    <% end %>
+  </section>
+</div>
     <%= yield %>
   </body>
 </html>
