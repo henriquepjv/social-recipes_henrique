@@ -24,6 +24,10 @@ gem "paperclip", "~> 5.0.0"
 
 gem 'searchkick'
 
+gem "factory_girl_rails", "~> 4.0"
+
+gem 'devise'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

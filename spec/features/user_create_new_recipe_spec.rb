@@ -2,14 +2,12 @@ require 'rails_helper'
 
 feature 'Visitor create new recipe' do
   scenario 'successfully' do
-    cookery = Cookery.create(name: 'Italiana')
 
-    food = Food.create(name: 'entrada')
+    cookery = create(:cookery)
 
-    recipe = Recipe.new(name: 'bolo', cookery: cookery, food: food,
-                            people_portion: '6', preparation_time: '60 min',
-                            difficult: 'médio', ingredients: 'fermento, doce de leite',
-                            steps: 'primeiro quebre os ovos')
+    food = create(:food) 
+
+    recipe = build(:recipe, cookery: cookery, food: food)
 
     visit new_recipe_path
 

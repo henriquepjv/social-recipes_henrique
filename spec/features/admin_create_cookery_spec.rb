@@ -3,8 +3,7 @@ require 'rails_helper'
 feature 'Administrator creates new cookery' do
   scenario 'Successfully' do
 
-    user = User.new(name: 'Henrique', email: 'henriquepjv@hotmail.com',
-                    encrypted_password: '123456', administrator: true)
+    user = create(:user)
 
     cookery = Cookery.new(name: 'Italiana')
 

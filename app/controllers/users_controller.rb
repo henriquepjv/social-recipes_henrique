@@ -12,19 +12,17 @@ class UsersController < ApplicationController
       flash[:notice] = 'Dado inválido'
       render :new
     end
+  end
 
     def show
       @user = User.find(params[:id])
     end
 
-  end
-
 
   private
 
   def users_params
-  params.require(:user).permit(:name, :email, :encrypted_password,
-                              :administrator)
+  params.require(:user).permit(:email, :password)
   end
 
 end
