@@ -19,14 +19,17 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <form role="form" action="/">
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Entrar', new_user_session_path %></li>
-          <li><%= link_to 'Início', root_path %></li>
+          <% if user_signed_in? %>
+            <li>Olá <%= current_user.email %></li>
+          <% else %>
+            <li><%= link_to 'Entrar', new_user_session_path %></li>
+          <% end %>
           <li><%= link_to 'Cadastrar receitas', new_recipe_path %></li>
           <li><%= link_to 'Cadastrar usuários', new_user_registration_path %></li>
           <li><%= link_to 'Cadastrar cozinha', new_cookery_path %></li>
           <li><%= link_to 'Cadastrar tipo de comida', new_food_path %></li>
-          <li><input type="text" placeholder="Buscar" name="keywords"></li>
-          <li><button type="submit" class="btn btn-primary btn-block">Submit</button></li>
+          <li><input type="text" placeholder="Ex: bolo..." name="keywords"></li>
+          <li><button type="submit" class="btn btn-primary btn-block">Buscar</button></li>
       </form>
 
           </ul>
