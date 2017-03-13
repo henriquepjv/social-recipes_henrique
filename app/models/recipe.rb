@@ -2,6 +2,7 @@ class Recipe < ApplicationRecord
 
   belongs_to :cookery
   belongs_to :food
+  belongs_to :user
 
   validates :name, :people_portion,
             :preparation_time, :difficult, :ingredients,

@@ -3,11 +3,15 @@ require 'rails_helper'
 feature 'Visitor create new recipe' do
   scenario 'successfully' do
 
+    user = create(:user)
+
     cookery = create(:cookery)
 
-    food = create(:food) 
+    food = create(:food)
 
     recipe = build(:recipe, cookery: cookery, food: food)
+
+    login_as(user, :scope => :user)
 
     visit new_recipe_path
 
@@ -33,11 +37,23 @@ feature 'Visitor create new recipe' do
 
   scenario 'With invalid data' do
 
+    user = create(:user)
+
+    login_as(user, :scope => :user)
+
     visit new_recipe_path
 
     click_on 'Cadastrar receita'
 
     expect(page).to have_content 'Dado inválido'
+
+  end
+
+  scenario 'must be logged in' do
+
+    visit new_recipe_path
+
+    expect(current_path).to eq(new_user_session_path)
 
   end
 
