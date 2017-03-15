@@ -20,7 +20,9 @@
       <form role="form" action="/">
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
-            <li>Olá <%= current_user.email %></li>
+            <li><%=link_to "Olá #{current_user.email}", edit_user_registration_path %></li>
+            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+
           <% else %>
             <li><%= link_to 'Entrar', new_user_session_path %></li>
           <% end %>

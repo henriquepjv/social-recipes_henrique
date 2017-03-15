@@ -3,6 +3,7 @@ FactoryGirl.define do
     name 'bolo'
     cookery
     food
+    user
     people_portion '6'
     preparation_time '60 min'
     difficult 'médio'

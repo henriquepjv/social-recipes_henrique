@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Visitor create new recipe' do
   scenario 'successfully' do
 
-    user = create(:user)
+    user = create(:user, email: 'lalala@blabla')
 
     cookery = create(:cookery)
 
