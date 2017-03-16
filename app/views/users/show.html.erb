@@ -1,4 +1,11 @@
 <dl>
   <dt><%= @user.email %></dt>
   <dt><%= @user.password %></dt>
+
+<ul>
+  <% @user.recipes.each do |recipe| %>
+  <li><%= link_to recipe.name, recipe_path(recipe) %></li>
+  <% end %>
+</ul>
+
 </dl>

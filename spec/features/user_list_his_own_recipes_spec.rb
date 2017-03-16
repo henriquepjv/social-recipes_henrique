@@ -15,10 +15,10 @@ feature 'User list his own recipes' do
     visit root_path
 
     click_on 'Entrar'
-
+byebug
     fill_in 'Email', with: user.email
     fill_in 'Senha', with: user.password
-  
+
     click_on 'Login'
 
     expect(page).to have_content("Olá #{user.email}")

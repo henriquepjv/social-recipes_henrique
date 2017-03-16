@@ -7,5 +7,6 @@ root to: 'recipes#index'
 resources :recipes, only:[:new, :create, :show]
 resources :cookeries, only:[:new, :create, :show]
 resources :foods, only:[:new, :create, :show]
+resources :users, only: [:show]
 
 end
