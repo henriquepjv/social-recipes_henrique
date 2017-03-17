@@ -16,7 +16,14 @@ class UsersController < ApplicationController
 
     def show
       @user = User.find(params[:id])
-      @recipes = Recipe.all
+    end
+
+    def update
+      if @recipe.update recipe_params
+        redirect_to @recipe
+      else
+        render 'Editar'
+      end
     end
 
 

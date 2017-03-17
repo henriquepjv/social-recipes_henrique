@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :recipes
+
+  scope :most_recent, -> {order(id: :desc)}
 end

@@ -1,11 +1,14 @@
 <dl>
-  <dt><%= @user.email %></dt>
-  <dt><%= @user.password %></dt>
-
-<ul>
-  <% @user.recipes.each do |recipe| %>
-  <li><%= link_to recipe.name, recipe_path(recipe) %></li>
-  <% end %>
-</ul>
-
+  <dt><strong><h2>Minhas Receitas</h2></strong></dt>
 </dl>
+
+<% @user.recipes.most_recent.each do |recipe| %>
+  <dl>
+    <dt><%= link_to recipe.name, recipe_path(recipe) %></dt>
+    <dd><%= recipe.cookery.name %></dd>
+    <dd><%= recipe.food.name %></dd>
+    <dd><%= recipe.difficult %></dd>
+    <dd><%= link_to 'Editar', edit_recipe_path(recipe) %> |
+        <%= link_to 'Deletar', recipe_path(recipe), method: :delete, data: {confirm: "Deseja mesmo excluir?"} %></dd>
+  </dl>
+<% end %>

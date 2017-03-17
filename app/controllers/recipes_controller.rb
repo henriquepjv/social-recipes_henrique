@@ -32,6 +32,27 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def edit
+      @recipe = Recipe.find(params[:id])
+      @cookeries = Cookery.all
+      @foods = Food.all
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    if @recipe.update recipe_params
+      redirect_to @recipe
+    else
+      render 'Editar'
+    end
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to user_path(current_user.id)
+  end
+
 
   private
 

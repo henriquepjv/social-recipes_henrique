@@ -1,0 +1,38 @@
+<%= notice %>
+
+<h2>Edite a sua receita</h2>
+
+<%= form_for @recipe, html: { multipart: true } do |f| %>
+  <dl>
+    <dt><%= f.label :name, 'Nome da receita' %></dt>
+    <dd><%= f.text_field :name %><dd>
+
+    <dt><%= f.label :picture, 'Insira uma imagem' %></dt>
+    <dd><%= f.file_field :picture %><dd>
+
+    <dt><%= f.label :cookery_id, 'Cozinha' %></dt>
+    <dd><%= f.collection_select(:cookery_id, @cookeries, :id, :name) %></dd>
+
+    <dt><%= f.label :food_id, 'Tipo de comida' %></dt>
+    <dd><%= f.collection_select(:food_id, @foods, :id, :name) %></dd>
+
+    <dt><%= f.label :people_portion, 'Quantas pessoas serve' %></dt>
+    <dd><%= f.text_field :people_portion %></dd>
+
+    <dt><%= f.label :preparation_time, 'Tempo de preparo' %></dt>
+    <dd><%= f.text_field :preparation_time %></dd>
+
+    <dt><%= f.label :difficult, 'Nível de dificuldade' %></dt>
+    <dd><%= f.text_field :difficult %></dd>
+
+    <dt><%= f.label :ingredients, 'Ingredientes' %></dt>
+    <dd><%= f.text_field :ingredients %></dd>
+
+    <dt><%= f.label :steps, 'Passo a passo' %></dt>
+    <dd><%= f.text_field :steps %></dd>
+
+    <br>
+
+    <dt><%= f.submit 'Cadastrar receita' %></dt>
+
+<% end %>

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User list his own recipes' do
+feature 'User edit his own recipes' do
   scenario 'Successfully' do
     cookery = create(:cookery)
 
@@ -10,7 +10,6 @@ feature 'User list his own recipes' do
 
     recipe = create(:recipe, user: user, food: food)
 
-    otherRecipe = create(:recipe, name: 'bomba de chocolate', user: user)
 
     visit root_path
 
@@ -30,10 +29,8 @@ feature 'User list his own recipes' do
     expect(page).to have_content recipe.cookery.name
     expect(page).to have_content recipe.difficult
 
-    expect(page).to have_content otherRecipe.name
-    expect(page).to have_content otherRecipe.food.name
-    expect(page).to have_content otherRecipe.cookery.name
-    expect(page).to have_content otherRecipe.difficult
+    click_on 'Editar'
+
 
 
   end
