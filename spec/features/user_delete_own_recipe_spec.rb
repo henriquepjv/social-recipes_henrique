@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User edit his own recipes' do
+feature 'User delete his own recipes' do
   scenario 'Successfully' do
     cookery = create(:cookery)
 
@@ -8,7 +8,7 @@ feature 'User edit his own recipes' do
 
     food = create(:food)
 
-    recipe = create(:recipe, user: user, food: food)
+    recipe = create(:recipe, user: user, food: food, name: 'milho', cookery: cookery)
 
 
     visit root_path
@@ -29,9 +29,15 @@ feature 'User edit his own recipes' do
     expect(page).to have_content recipe.cookery.name
     expect(page).to have_content recipe.difficult
 
-    click_on 'Editar'
+    click_on 'Deletar'
 
-
+    expect(page).not_to have_content recipe.name
+    expect(page).not_to have_content recipe.food.name
+    expect(page).not_to have_content recipe.cookery.name
+    expect(page).not_to have_content recipe.difficult
+    expect(page).not_to have_content recipe.ingredients
+    expect(page).not_to have_content recipe.steps
+    expect(page).not_to have_content recipe.people_portion
 
   end
 end
