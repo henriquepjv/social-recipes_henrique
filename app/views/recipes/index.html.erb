@@ -2,9 +2,11 @@
   <div class="row">
      <div class="col-xs-6 col-md-4">
        <h3 id="tipo-de-comida">Tipo</h3>
-        <p>Entrada</p>
-        <p>Principal</p>
-        <p>Sobremesa</p>
+       <% @foods.each do |food| %>
+        <dt>
+          <dd><%= link_to food.name, food_path(food) %></dd>
+        </dt>
+      <% end %>
 
         <h3 id="cozinhas">Cozinha</h3>
           <% @cookeries.each do |cookery| %>

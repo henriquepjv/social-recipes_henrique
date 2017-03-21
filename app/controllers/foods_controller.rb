@@ -16,6 +16,7 @@ class FoodsController < ApplicationController
 
   def show
     @food = Food.find(params[:id])
+    @foods = Food.includes(:recipes).where(recipes: { food_id: @food })
   end
 
 

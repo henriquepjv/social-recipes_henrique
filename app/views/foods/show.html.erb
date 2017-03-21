@@ -1,1 +1,14 @@
-<%= @food.name %>
+<dl>
+  <dt>Tipo de Comida: <%= @food.name %></dt>
+</dl>
+
+<% @foods.each do |food| %>
+
+  <ul>
+    <% food.recipes.each do |recipe| %>
+    <li><%= link_to recipe.name, recipe_path(recipe) %></li>
+    <li><%= recipe.cookery.name %></li>
+
+    <% end %>
+  </ul>
+<% end %>
