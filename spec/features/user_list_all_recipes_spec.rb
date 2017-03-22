@@ -2,20 +2,15 @@ require 'rails_helper'
 
 feature 'Visitor list all recipes' do
   scenario 'Successfully' do
-    cookery = Cookery.create(name: 'Italiana')
+    cookery = create(:cookery)
 
-    food = Food.create(name: 'entrada')
+    user = create(:user, email: 'xpto@blabla', name: 'José' )
 
-    recipe = Recipe.create(name: 'bolo', cookery: cookery, food: food,
-                            people_portion: '6', preparation_time: '60 min',
-                            difficult: 'médio', ingredients: 'fermento, doce de leite',
-                            steps: 'primeiro quebre os ovos')
+    food = create(:food)
 
-    otherRecipe = Recipe.create(name: 'biscoito', cookery: cookery, food: food,
-                            people_portion: '10', preparation_time: '120 min',
-                            difficult: 'médio', ingredients: 'farinha, fermento, sal',
-                            steps: 'primeiro misture a farinha com o fermento')
+    recipe = create(:recipe, user: user, food: food)
 
+    otherRecipe = create(:recipe, name: 'bomba de chocolate')
 
     visit root_path
 

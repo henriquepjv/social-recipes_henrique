@@ -30,25 +30,24 @@
           <li><%= link_to 'Cadastrar usuários', new_user_registration_path %></li>
           <li><%= link_to 'Cadastrar cozinha', new_cookery_path %></li>
           <li><%= link_to 'Cadastrar tipo de comida', new_food_path %></li>
-          <li><input type="text" placeholder="Ex: bolo..." name="keywords"></li>
-          <li><button type="submit" class="btn btn-primary btn-block">Buscar</button></li>
-      </form>
-
+            <%= form_tag(root_path, :method => :get) do %>
+              <li><%= text_field_tag 'search', nil, placeholder: 'Ex: bolo...' %></li>
+              <li><%= submit_tag 'Buscar' %></li>
+            <% end %>
           </ul>
         </li>
+      </form>
     </div>
-  </div>
 </nav>
 
-  <section class="recipes">
-    <% if @allrecipes.present? %>
-      <% @allrecipes.each do |recipe| %>
+  <section>
+    <% if @searchRecipes.present? %>
+      <% @searchRecipes.each do |recipe| %>
       <div class="col-md-12">
-        <h1><%= recipe.name %></h1>
+        <h3><%= link_to recipe.name, recipe_path(recipe) %></h3>
         <p><%= recipe.ingredients %></p>
           </div>
       <% end %>
-
   </section>
 </div>
 <% end %>

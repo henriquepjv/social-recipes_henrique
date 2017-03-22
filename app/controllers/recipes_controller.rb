@@ -6,9 +6,10 @@ class RecipesController < ApplicationController
     @cookeries = Cookery.all
     @foods = Food.all
 
-    if params[:keywords].present?
-     @allrecipes = Recipe.search params[:keywords], fields: [:name, :ingredients]
-   end
+    if params[:search]
+      @searchRecipes = Recipe.search(params[:search])
+
+    end
   end
 
   def new
