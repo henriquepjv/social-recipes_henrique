@@ -4,6 +4,7 @@ FactoryGirl.define do
     cookery
     food
     user
+    picture_file_name 'hrq.jpg'
     people_portion '6'
     preparation_time '60 min'
     difficult 'médio'

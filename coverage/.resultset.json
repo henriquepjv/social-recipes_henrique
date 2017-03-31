@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/junqueira/workspace/time-janeiro/rails/recipes/app/models/cookery.rb": [
+      "/Users/campuscodemm3/workspace/social-recipes_henrique/app/models/cookery.rb": [
         1,
         null,
         1,
@@ -10,7 +10,7 @@
         null,
         null
       ],
-      "/home/junqueira/workspace/time-janeiro/rails/recipes/app/controllers/cookeries_controller.rb": [
+      "/Users/campuscodemm3/workspace/social-recipes_henrique/app/controllers/cookeries_controller.rb": [
         1,
         null,
         1,
@@ -40,13 +40,13 @@
         null,
         null
       ],
-      "/home/junqueira/workspace/time-janeiro/rails/recipes/app/controllers/application_controller.rb": [
+      "/Users/campuscodemm3/workspace/social-recipes_henrique/app/controllers/application_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/home/junqueira/workspace/time-janeiro/rails/recipes/app/models/recipe.rb": [
+      "/Users/campuscodemm3/workspace/social-recipes_henrique/app/models/recipe.rb": [
         1,
         null,
         1,
@@ -66,7 +66,7 @@
         null,
         null
       ],
-      "/home/junqueira/workspace/time-janeiro/rails/recipes/app/models/food.rb": [
+      "/Users/campuscodemm3/workspace/social-recipes_henrique/app/models/food.rb": [
         1,
         null,
         1,
@@ -75,7 +75,7 @@
         null,
         null
       ],
-      "/home/junqueira/workspace/time-janeiro/rails/recipes/app/controllers/foods_controller.rb": [
+      "/Users/campuscodemm3/workspace/social-recipes_henrique/app/controllers/foods_controller.rb": [
         1,
         null,
         1,
@@ -106,7 +106,7 @@
         null,
         null
       ],
-      "/home/junqueira/workspace/time-janeiro/rails/recipes/app/controllers/recipes_controller.rb": [
+      "/Users/campuscodemm3/workspace/social-recipes_henrique/app/controllers/recipes_controller.rb": [
         1,
         1,
         null,
@@ -175,7 +175,7 @@
         null,
         null
       ],
-      "/home/junqueira/workspace/time-janeiro/rails/recipes/app/controllers/users_controller.rb": [
+      "/Users/campuscodemm3/workspace/social-recipes_henrique/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -213,34 +213,38 @@
         null,
         null
       ],
-      "/home/junqueira/workspace/time-janeiro/rails/recipes/app/channels/application_cable/channel.rb": [
+      "/Users/campuscodemm3/workspace/social-recipes_henrique/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/junqueira/workspace/time-janeiro/rails/recipes/app/channels/application_cable/connection.rb": [
+      "/Users/campuscodemm3/workspace/social-recipes_henrique/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/junqueira/workspace/time-janeiro/rails/recipes/app/mailers/application_mailer.rb": [
+      "/Users/campuscodemm3/workspace/social-recipes_henrique/app/helpers/application_helper.rb": [
+        0,
+        0
+      ],
+      "/Users/campuscodemm3/workspace/social-recipes_henrique/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/campuscodemm3/workspace/social-recipes_henrique/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/junqueira/workspace/time-janeiro/rails/recipes/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/home/junqueira/workspace/time-janeiro/rails/recipes/app/models/application_record.rb": [
+      "/Users/campuscodemm3/workspace/social-recipes_henrique/app/models/application_record.rb": [
         0,
         0,
         0
       ],
-      "/home/junqueira/workspace/time-janeiro/rails/recipes/app/models/user.rb": [
+      "/Users/campuscodemm3/workspace/social-recipes_henrique/app/models/user.rb": [
         0,
         0,
         0,
@@ -249,14 +253,10 @@
         0,
         0,
         0,
-        0,
-        0
-      ],
-      "/home/junqueira/workspace/time-janeiro/rails/recipes/app/helpers/application_helper.rb": [
         0,
         0
       ]
     },
-    "timestamp": 1490193374
+    "timestamp": 1490994323
   }
 }

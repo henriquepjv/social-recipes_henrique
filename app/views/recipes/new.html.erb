@@ -11,7 +11,6 @@
     <dt><%= f.label :cookery_id, 'Cozinha' %></dt>
     <dd><%= f.collection_select(:cookery_id, @cookeries, :id, :name) %></dd>
 
-
     <dt><%= f.label :food_id, 'Tipo de comida' %></dt>
     <dd><%= f.collection_select(:food_id, @foods, :id, :name) %></dd>
 

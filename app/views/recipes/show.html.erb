@@ -1,11 +1,21 @@
 <dl>
-  <dt><%= @recipe.name %></dt>
-  <dt><%= @recipe.cookery.name %></dt>
-  <dt><%= @recipe.food.name %></dt>
-  <dt><%= @recipe.people_portion %></dt>
-  <dt><%= @recipe.preparation_time %></dt>
-  <dt><%= @recipe.difficult %></dt>
-  <dt><%= @recipe.ingredients %></dt>
-  <dt><%= @recipe.steps %></dt>
+  <dt>Nome da receita:</dt>
+    <dd><%= @recipe.name %></dd>
+  <dt>Tipo de cozinha:</dt>
+    <dd><%= @recipe.cookery.name %></dd>
+  <dt>Tipo de refeição</dt>
+    <dd><%= @recipe.food.name %>/dd>
+  <dt>Porção para: </dt>
+    <dd><%= @recipe.people_portion %></dd>
+  <dt>Tempo de preparo:</dt>
+    <dd><%= @recipe.preparation_time %></dd>
+  <dt>Dificuldade:</dt>
+    <dd><%= @recipe.difficult %></dd>
+  <dt>Ingredientes</dt>
+    <dd><%= @recipe.ingredients %></dd>
+  <dt>Passo a passo:</dt>
+    <dd><%= @recipe.steps %></dd>
+  <dt>Usuário que criou a receita:</dt>
+    <dd><%= @recipe.user.email %></dd>
   <dt><%= image_tag @recipe.picture.url(:medium) %></dt>
 </dl>
