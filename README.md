@@ -1,3 +1,3 @@
 # Social Recipes - Henrique
 
-![Potato](https://www.pexels.com/photo/brown-potato-in-front-of-french-fries-162971/)
+![Potato](https://static.pexels.com/photos/162971/potatoes-french-mourning-funny-162971.jpeg)
