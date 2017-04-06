@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170311164250) do
+ActiveRecord::Schema.define(version: 20170331203807) do
 
   create_table "cookeries", force: :cascade do |t|
     t.string   "name"
@@ -34,12 +34,12 @@ ActiveRecord::Schema.define(version: 20170311164250) do
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.integer  "cookery_id"
+    t.integer  "food_id"
+    t.integer  "user_id"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-    t.integer  "food_id"
-    t.integer  "user_id"
     t.index ["cookery_id"], name: "index_recipes_on_cookery_id"
     t.index ["food_id"], name: "index_recipes_on_food_id"
     t.index ["user_id"], name: "index_recipes_on_user_id"
