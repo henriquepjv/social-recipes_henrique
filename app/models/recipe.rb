@@ -10,7 +10,10 @@ class Recipe < ApplicationRecord
 
   scope :most_recent, -> {order(id: :desc)}
 
-  scope :search, ->(query) {  where("name like ?", "%#{query}%") }
+  searchkick callbacks: :async
+
+
+  #scope :search, ->(query) {  where("name like ?", "%#{query}%") }
 
   has_attached_file :picture, styles: { medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/

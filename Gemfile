@@ -40,6 +40,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
+gem 'searchkick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

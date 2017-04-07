@@ -6,9 +6,8 @@ class RecipesController < ApplicationController
     @cookeries = Cookery.all
     @foods = Food.all
 
-    if params[:search]
-      @searchRecipes = Recipe.search(params[:search])
-
+    if params[:search].present?
+     @search_recipes = Recipe.search params[:search], fields: [:name, :ingredients]
     end
   end
 
