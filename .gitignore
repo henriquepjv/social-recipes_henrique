@@ -4,8 +4,6 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-# Ignore simplecov coverage/index.html changes
-coverage
 
 # Ignore bundler config.
 /.bundle
@@ -22,3 +20,4 @@ coverage
 
 # Ignore Byebug command history file.
 .byebug_history
+coverage
