@@ -11,6 +11,7 @@ RUN apt-get install -y libqt4-webkit libqt4-dev xvfb
 # for a JS runtime
 RUN apt-get install -y nodejs
 
+
 COPY Gemfile* ./
 COPY Gemfile.lock* ./
 RUN gem install bundler -v 1.14.5
