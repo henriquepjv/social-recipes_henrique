@@ -44,7 +44,10 @@ class RecipesController < ApplicationController
     if @recipe.update recipe_params
       redirect_to @recipe
     else
-      render 'Editar'
+      flash[:alert] = 'Preencha todos os campos'
+      @foods = Food.all
+      @cookeries = Cookery.all
+      render :edit
     end
   end
 

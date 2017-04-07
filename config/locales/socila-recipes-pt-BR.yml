@@ -1,0 +1,25 @@
+pt-BR:
+  activerecord:
+    models:
+      user: Usuário
+      cookery: Cozinha
+      food: Tipo de comida
+      recipe: Receita
+    attributes:
+      user:
+        name: 'Nome'
+        password: 'Senha'
+        password_confirmation: 'Confirmação de senha'
+        administrator: 'Administrador'
+      cookery:
+        name: 'Nome'
+      food:
+        name: 'Nome'
+      recipe:
+        name: 'Nome'
+        people_portion: 'Porção para'
+        preparation_time: 'Tempo de preparo'
+        difficult: 'Dificuldade'
+        ingredients: 'Ingredientes'
+        steps: 'Passos'
+        picture: 'Foto'

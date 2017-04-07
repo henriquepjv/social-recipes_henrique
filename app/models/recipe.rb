@@ -12,7 +12,6 @@ class Recipe < ApplicationRecord
 
   searchkick callbacks: :async
 
-
   #scope :search, ->(query) {  where("name like ?", "%#{query}%") }
 
   has_attached_file :picture, styles: { medium: "300x300>", thumb: "100x100>" }
