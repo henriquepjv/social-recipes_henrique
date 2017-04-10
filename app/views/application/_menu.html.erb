@@ -1,0 +1,37 @@
+<nav class="navbar navbar-default">
+
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="bs-example-navbar-collapse-1" aria-expanded="false" >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'Social Recipes', root_path, class: 'navbar-brand' %>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <form role="form" action="/">
+
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li><%=link_to "Olá #{current_user.email}", edit_user_registration_path %></li>
+            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+            <li><%= link_to 'Minhas Receitas', user_path(current_user.id) %></li>
+          <% else %>
+            <li><%= link_to 'Entrar', new_user_session_path %></li>
+          <% end %>
+            <li><%= link_to 'Cadastrar receitas', new_recipe_path %></li>
+            <li><%= link_to 'Cadastrar usuários', new_user_registration_path %></li>
+            <li><%= link_to 'Cadastrar cozinha', new_cookery_path %></li>
+            <li><%= link_to 'Cadastrar tipo de comida', new_food_path %></li>
+          <%= form_tag(root_path, :method => :get) do %>
+            <li><%= text_field_tag 'search', nil, placeholder: 'Ex: bolo...', class: 'form-control-menu'  %></li>
+            <li><%= submit_tag 'Buscar', class: 'btn btn-primary navbar-btn' %></li>
+          <% end %>
+        </form>
+      </ul>
+    </div>
+</nav>
