@@ -1,0 +1,13 @@
+<dl>
+  <dt><strong><h2>Minhas Receitas Favoritas</h2></strong></dt>
+</dl>
+
+<% @recipes.each do |recipe| %>
+  <dl>
+    <dt><%= link_to recipe.name, recipe_path(recipe) %></dt>
+    <dd><%= recipe.cookery.name %></dd>
+    <dd><%= recipe.food.name %></dd>
+    <dd><%= recipe.difficult %></dd>
+    <%= link_to "unfavorite", unfavorite_users_path(:recipe => recipe.id, type: "unfavorite") %>
+  </dl>
+<% end %>

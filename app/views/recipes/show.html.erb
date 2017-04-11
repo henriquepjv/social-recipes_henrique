@@ -18,4 +18,7 @@
   <dt>Usuário que criou a receita:</dt>
     <dd><%= @recipe.user.email %></dd>
   <dt><%= image_tag @recipe.picture.url(:medium) %></dt>
+
+  <%= link_to "Favoritar",   favorite_recipes_path(:recipe => @recipe.id, :type => "favorite") %>
+
 </dl>

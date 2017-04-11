@@ -5,6 +5,7 @@ pt-BR:
       cookery: Cozinha
       food: Tipo de comida
       recipe: Receita
+      favorite_recipes: Receitas favoritas
     attributes:
       user:
         name: 'Nome'

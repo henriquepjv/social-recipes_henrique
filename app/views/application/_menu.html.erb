@@ -20,6 +20,7 @@
             <li><%=link_to "Olá #{current_user.email}", edit_user_registration_path %></li>
             <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
             <li><%= link_to 'Minhas Receitas', user_path(current_user.id) %></li>
+            <li><%= link_to 'Favoritas', favorite_users_path %></li>
           <% else %>
             <li><%= link_to 'Entrar', new_user_session_path %></li>
           <% end %>

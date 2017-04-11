@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :favorite]
 
   def index
     @recipes = Recipe.most_recent.limit(20)
@@ -55,6 +55,28 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
     redirect_to user_path(current_user.id)
+  end
+
+  def favorite
+    type = params[:type]
+    @recipe = Recipe.find(params[:recipe])
+    if type == "favorite"
+      current_user.favorites << @recipe
+      redirect_to :back, notice: 'You favorited #{@recipe.name}'
+
+    elsif type == "unfavorite"
+      current_user.favorites.delete(@recipe)
+      redirect_to :back, notice: 'Unfavorited #{@recipe.name}'
+
+    else
+      # Type missing, nothing happens
+      redirect_to :back, notice: 'Nothing happened.'
+    end
+# @recipe = Recipe.find(params[:recipe])
+# if current_user.favorites << @recipe
+#   redirect_to user_path(current_user.id)
+#   flash[:alert] = "Receita adicionada aos favoritos #{@recipe.name}"
+# end
   end
 
 
