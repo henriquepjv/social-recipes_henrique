@@ -62,15 +62,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:recipe])
     if type == "favorite"
       current_user.favorites << @recipe
-      redirect_to :back, notice: 'You favorited #{@recipe.name}'
+    #  redirect_to :back, notice: 'Receita adicionada aos favoritos'
+      redirect_back( fallback_location: (request.referer || root_path), notice: "Receita adicionada aos favoritos")
 
-    elsif type == "unfavorite"
-      current_user.favorites.delete(@recipe)
-      redirect_to :back, notice: 'Unfavorited #{@recipe.name}'
-
-    else
-      # Type missing, nothing happens
-      redirect_to :back, notice: 'Nothing happened.'
     end
 # @recipe = Recipe.find(params[:recipe])
 # if current_user.favorites << @recipe
